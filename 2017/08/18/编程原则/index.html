@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="设计模式,principle,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="月光下的影子" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="原始链接principle  每一个程序员都应该理解并使用编程原则以及设计模式，并能从中受益。  通用原则KISS(Keep It Simple Stupid) 大多数系统在保持简单而不是复杂的情况下运行得最好。  为什么这么做 代码越少，编写的时间就越少，bug也就越少，并且更容易修改。 Simplicity is the ultimate sophistication.（简化是最终的高雅？）">
+<meta name="keywords" content="设计模式,principle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编程原则">
+<meta property="og:url" content="https://yangrubing.github.io/2017/08/18/编程原则/index.html">
+<meta property="og:site_name" content="月光下的影子">
+<meta property="og:description" content="原始链接principle  每一个程序员都应该理解并使用编程原则以及设计模式，并能从中受益。  通用原则KISS(Keep It Simple Stupid) 大多数系统在保持简单而不是复杂的情况下运行得最好。  为什么这么做 代码越少，编写的时间就越少，bug也就越少，并且更容易修改。 Simplicity is the ultimate sophistication.（简化是最终的高雅？）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-01-16T07:06:22.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编程原则">
+<meta name="twitter:description" content="原始链接principle  每一个程序员都应该理解并使用编程原则以及设计模式，并能从中受益。  通用原则KISS(Keep It Simple Stupid) 大多数系统在保持简单而不是复杂的情况下运行得最好。  为什么这么做 代码越少，编写的时间就越少，bug也就越少，并且更容易修改。 Simplicity is the ultimate sophistication.（简化是最终的高雅？）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yangrubing.github.io/2017/08/18/编程原则/">
+
+
+
+
+
+  <title>编程原则 | 月光下的影子</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?825171e0a864b9dffeb590351c2abc71";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">月光下的影子</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Only the stronger survives in this world.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yangrubing.github.io/2017/08/18/编程原则/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Robin Yang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar/obito.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="月光下的影子">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">编程原则</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T14:42:59+00:00">
+                2017-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>原始链接<a href="http://java-design-patterns.com/principles/#law-of-demeter" target="_blank" rel="noopener">principle</a></p>
+<blockquote>
+<p>每一个程序员都应该理解并使用编程原则以及设计模式，并能从中受益。</p>
+</blockquote>
+<h1 id="通用原则"><a href="#通用原则" class="headerlink" title="通用原则"></a>通用原则</h1><h2 id="KISS-Keep-It-Simple-Stupid"><a href="#KISS-Keep-It-Simple-Stupid" class="headerlink" title="KISS(Keep It Simple Stupid)"></a>KISS(Keep It Simple Stupid)</h2><blockquote>
+<p>大多数系统在保持简单而不是复杂的情况下运行得最好。</p>
+</blockquote>
+<h3 id="为什么这么做"><a href="#为什么这么做" class="headerlink" title="为什么这么做"></a>为什么这么做</h3><ul>
+<li>代码越少，编写的时间就越少，bug也就越少，并且更容易修改。</li>
+<li>Simplicity is the ultimate sophistication.（简化是最终的高雅？）</li>
+<li>完美并不是说系统达到了无法添加的程度，而是指达到了没有任何可以继续简化的程度。<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://en.wikipedia.org/wiki/KISS_principle" target="_blank" rel="noopener">KISS Principle</a></li>
+<li><a href="http://principles-wiki.net/principles:keep_it_simple_stupid" target="_blank" rel="noopener">Keep It Simple Stupid (KISS)</a><h2 id="YAGNI-You-aren’t-gonna-need-it"><a href="#YAGNI-You-aren’t-gonna-need-it" class="headerlink" title="YAGNI(You aren’t gonna need it)"></a>YAGNI(You aren’t gonna need it)</h2><blockquote>
+<p>不要实现没有必要实现的东西。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="为什么这么做-1"><a href="#为什么这么做-1" class="headerlink" title="为什么这么做"></a>为什么这么做</h3><ul>
+<li>为了完成以后需要来完成的功能付出努力，意味着你会减低为当前迭代周期付出的努力。</li>
+<li>可能会导致代码膨胀，软件将会变得越来越复杂。<h3 id="如何做"><a href="#如何做" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>只实现当前系统中必须实现的东西而不是那些你所能遇见到的将来可能会需要来实现的，那些东西以后再实现。<h3 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://c2.com/xp/YouArentGonnaNeedIt.html" target="_blank" rel="noopener">http://c2.com/xp/YouArentGonnaNeedIt.html</a></li>
+<li><a href="http://www.xprogramming.com/Practices/PracNotNeed.html" target="_blank" rel="noopener">http://www.xprogramming.com/Practices/PracNotNeed.html</a></li>
+<li><a href="http://en.wikipedia.org/wiki/You_ain&#39;t_gonna_need_it" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/You_ain’t_gonna_need_it</a></li>
+</ul>
+<h2 id="做最简单的事-Do-The-Simplest-Thing-That-Could-Possibly-Work"><a href="#做最简单的事-Do-The-Simplest-Thing-That-Could-Possibly-Work" class="headerlink" title="做最简单的事(Do The Simplest Thing That Could Possibly Work)"></a>做最简单的事(Do The Simplest Thing That Could Possibly Work)</h2><h3 id="为什么这么做-2"><a href="#为什么这么做-2" class="headerlink" title="为什么这么做"></a>为什么这么做</h3><ul>
+<li>为这个问题寻找最简单的解决方案，而不是将他复杂化。这样我们可以回归到问题的本身。<h3 id="如何做-1"><a href="#如何做-1" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>问你自己：“解决这个问题最简单的方案是什么？“<h3 id="参考资料-2"><a href="#参考资料-2" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://c2.com/xp/DoTheSimplestThingThatCouldPossiblyWork.html" target="_blank" rel="noopener">Do The Simplest Thing That Could Possibly Work</a></li>
+</ul>
+<h2 id="关注点分离-Separation-of-Concerns"><a href="#关注点分离-Separation-of-Concerns" class="headerlink" title="关注点分离(Separation of Concerns)"></a>关注点分离(Separation of Concerns)</h2><p>关注点分离是一种设计原则，用于将计算机程序分离成不同的部分，这样每个部分都处理一个单独的关注点。例如，应用程序的业务逻辑是一个令人关注的问题，而用户界面则是另一个关注点。更改用户界面不需要对业务逻辑进行更改，反之亦然。<br><a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra" target="_blank" rel="noopener">Edsger W. Dijkstra</a></p>
+<blockquote>
+<p>It is what I sometimes have called “the separation of concerns”, which, even if not perfectly possible, is yet the only available technique for effective ordering of one’s thoughts, that I know of. This is what I mean by “focusing one’s attention upon some aspect”: it does not mean ignoring the other aspects, it is just doing justice to the fact that from this aspect’s point of view, the other is irrelevant.</p>
+</blockquote>
+<h3 id="为什么这么做-3"><a href="#为什么这么做-3" class="headerlink" title="为什么这么做"></a>为什么这么做</h3><ul>
+<li>简化软件应用程序的开发和维护</li>
+<li>当关注点分离时，单独的部分可以被<strong>重用</strong>，也可以独立地<strong>开发</strong>和<strong>更新</strong>。<h3 id="如何做-2"><a href="#如何做-2" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>将程序功能分解成多个模块，尽可能少地重叠。但是也要注意别分的太散，不然将带来更大的复杂度。<h3 id="参考资料-3"><a href="#参考资料-3" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank" rel="noopener">Separation of Concerns</a><h2 id="保持代码干燥，尽量减少重复代码-Keep-Things-DRY"><a href="#保持代码干燥，尽量减少重复代码-Keep-Things-DRY" class="headerlink" title="保持代码干燥，尽量减少重复代码(Keep Things DRY)"></a>保持代码干燥，尽量减少重复代码(Keep Things DRY)</h2>程序中的每一个部分都必须在一个系统中是单一的、明确的、权威的表示。程序中的每一项重要功能都应该只在一个地方实现。在不同的代码片段中执行相似的功能时，将他们重合的部分提取出来。<h3 id="为什么这么做-4"><a href="#为什么这么做-4" class="headerlink" title="为什么这么做"></a>为什么这么做</h3></li>
+<li>重复(无意的或有目的的重复)会导致代码难以维护、分解以及逻辑上的矛盾。</li>
+<li>对系统中的任何单个功能进行修改时，不需要对其他逻辑无关的功能代码进行更改。</li>
+<li>此外，逻辑上相关的代码的改变都是可预测以及一致的，因此需要保持同步。<h3 id="如何做-3"><a href="#如何做-3" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>将业务规则、长表达式、if语句、数学公式、元数据等放在一个地方。</li>
+<li>确定系统中所使用的单一的、确定性的知识源，然后使用该源生成该知识的可应用实例(代码、文档、测试等)</li>
+<li>应用 <a href="http://en.wikipedia.org/wiki/Rule_of_three_(computer_programming" target="_blank" rel="noopener">Rule of three原则</a>).<h3 id="参考资料-4"><a href="#参考资料-4" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://c2.com/cgi/wiki?DontRepeatYourself" target="_blank" rel="noopener">Dont Repeat Yourself</a><h2 id="写代码的时候考虑代码的可维护性-Code-For-The-Maintainer"><a href="#写代码的时候考虑代码的可维护性-Code-For-The-Maintainer" class="headerlink" title="写代码的时候考虑代码的可维护性(Code For The Maintainer)"></a>写代码的时候考虑代码的可维护性(Code For The Maintainer)</h2><h3 id="为什么这么做-5"><a href="#为什么这么做-5" class="headerlink" title="为什么这么做"></a>为什么这么做</h3></li>
+<li>到目前为止，维护是任何项目中最昂贵的阶段。<h3 id="如何做-4"><a href="#如何做-4" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>成为一个代码的维护者。</li>
+<li>把维护你的代码的人想象成一个知道你住处的精神病患者，如果你的代码写的不好随时都可能过来干掉你。</li>
+<li>确定系统中所使用的单一的、确定性的知识源，然后使用该源生成该知识的可应用实例(代码、文档、测试等)</li>
+<li>良好的编写代码和注释，如果一个新手拿起代码，他们就会乐于阅读和学习。</li>
+<li><a href="http://www.sensible.com/dmmt.html" target="_blank" rel="noopener">Don’t make me think.</a></li>
+<li>Use <a href="http://en.wikipedia.org/wiki/Principle_of_least_astonishment" target="_blank" rel="noopener">the Principle of Least Astonishment</a><h3 id="参考资料-5"><a href="#参考资料-5" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://c2.com/cgi/wiki?CodeForTheMaintainer" target="_blank" rel="noopener">http://c2.com/cgi/wiki?CodeForTheMaintainer</a></li>
+<li><a href="http://blog.codinghorror.com/the-noble-art-of-maintenance-programming/" target="_blank" rel="noopener">http://blog.codinghorror.com/the-noble-art-of-maintenance-programming/</a></li>
+</ul>
+<h2 id="避免过早优化-Avoid-Premature-Optimization"><a href="#避免过早优化-Avoid-Premature-Optimization" class="headerlink" title="避免过早优化(Avoid Premature Optimization)"></a>避免过早优化(Avoid Premature Optimization)</h2><p>Donald Knuth:</p>
+<blockquote>
+<p>程序员浪费了大量的时间去思考，或者担心他们的程序的非关键部分的速度。而当考虑到调试和维护时，这些效率的尝试实际上会产生强烈的负面影响。我们应该忘记小的效率，大约97%的时间:过早的优化是所有邪恶的根源。然而，我们不应在那关键的3%中放弃我们的机会。</p>
+</blockquote>
+<p>当然，理解什么不是“过早”是至关重要的</p>
+<h3 id="为什么这么做-6"><a href="#为什么这么做-6" class="headerlink" title="为什么这么做"></a>为什么这么做</h3><ul>
+<li>在开发的早期，影响系统性能的问题并不会浮现的很清楚。</li>
+<li>在优化之后，代码可能更难读懂和维护。<h3 id="如何做-5"><a href="#如何做-5" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li><a href="http://c2.com/cgi/wiki?MakeItWorkMakeItRightMakeItFast" target="_blank" rel="noopener">Make It Work Make It Right Make It Fast</a></li>
+<li>只有在你真正需要的时候才去优化代码，并且在你明白系统的瓶颈后才去优化他。<h3 id="参考资料-6"><a href="#参考资料-6" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://en.wikipedia.org/wiki/Program_optimization" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Program_optimization</a></li>
+<li><a href="http://c2.com/cgi/wiki?PrematureOptimization" target="_blank" rel="noopener">http://c2.com/cgi/wiki?PrematureOptimization</a><h2 id="重构代码时需要考虑的问题——童子军原则-Boy-Scout-Rule"><a href="#重构代码时需要考虑的问题——童子军原则-Boy-Scout-Rule" class="headerlink" title="重构代码时需要考虑的问题——童子军原则(Boy-Scout Rule)"></a>重构代码时需要考虑的问题——童子军原则(Boy-Scout Rule)</h2><h3 id="为什么这么做-7"><a href="#为什么这么做-7" class="headerlink" title="为什么这么做"></a>为什么这么做</h3></li>
+<li>当对现有代码库进行更改时，有可能会降低代码的质量。<h3 id="如何做-6"><a href="#如何做-6" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>确保每次提交都不会降低代码的质量。</li>
+<li>当看到一些代码不像它应该的那样清晰，应该设法修复它。<h3 id="参考资料-7"><a href="#参考资料-7" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://martinfowler.com/bliki/OpportunisticRefactoring.html" target="_blank" rel="noopener">http://martinfowler.com/bliki/OpportunisticRefactoring.html</a><h1 id="模块与模块-类与类-之间的设计原则（Inter-Module-Class"><a href="#模块与模块-类与类-之间的设计原则（Inter-Module-Class" class="headerlink" title="模块与模块(类与类)之间的设计原则（Inter-Module/Class)"></a>模块与模块(类与类)之间的设计原则（Inter-Module/Class)</h1><h2 id="最小化代码的耦合程度-Minimise-Coupling"><a href="#最小化代码的耦合程度-Minimise-Coupling" class="headerlink" title="最小化代码的耦合程度(Minimise Coupling)"></a>最小化代码的耦合程度(Minimise Coupling)</h2>模块/组件之间的耦合是它们相互依赖的程度;低耦合是更好的。换句话说，耦合就是在修改模块A后模块B”中断“的概率。<h3 id="为什么这么做-8"><a href="#为什么这么做-8" class="headerlink" title="为什么这么做"></a>为什么这么做</h3></li>
+<li>一个模块的更改通常会导致其他模块的更改产生连锁反应。</li>
+<li>模块的组合可能需要更多的努力和/或时间，因为模块之间的依赖性增加了。</li>
+<li>由于必须包含依赖模块，一个特定的模块可能更难复用和测试。</li>
+<li>开发人员可能害怕更改代码，因为他们不确定可能会带来什么影响。<h3 id="如何做-7"><a href="#如何做-7" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>消除、最小化和减少必要的关系的复杂性。</li>
+<li>通过隐藏实现的细节，耦合程度就降低了。</li>
+<li>应用迪米特法则(<a href="http://java-design-patterns.com/principles/#law-of-demeter" target="_blank" rel="noopener">迪米特法则</a>)。<h3 id="参考资料-8"><a href="#参考资料-8" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://en.wikipedia.org/wiki/Coupling_(computer_programming" target="_blank" rel="noopener">Coupling</a>)</li>
+<li><a href="http://c2.com/cgi/wiki?CouplingAndCohesion" target="_blank" rel="noopener">Coupling And Cohesion</a></li>
+</ul>
+<h2 id="迪米特法则-Law-of-Demeter"><a href="#迪米特法则-Law-of-Demeter" class="headerlink" title="(迪米特法则)Law of Demeter"></a>(迪米特法则)Law of Demeter</h2><p>不要和陌生人说话（Don’t talk to strangers）</p>
+<h3 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h3><ul>
+<li>这样做会增加了耦合的程度</li>
+<li>这样做会暴露太多的实现细节<h3 id="如何做-8"><a href="#如何做-8" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>限制一个对象中的方法，让它只能访问：<ul>
+<li>这个对象本身</li>
+<li>这个方法的参数</li>
+<li>在这个方法中创建的对象</li>
+<li>这个对象的属性和域。<h3 id="参考资料-9"><a href="#参考资料-9" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank" rel="noopener">迪米特法则</a></li>
+<li><a href="http://haacked.com/archive/2009/07/14/law-of-demeter-dot-counting.aspx/" target="_blank" rel="noopener">The Law of Demeter Is Not A Dot Counting Exercise</a></li>
+</ul>
+<h2 id="组合优先用于继承-Composition-Over-Inheritance"><a href="#组合优先用于继承-Composition-Over-Inheritance" class="headerlink" title="组合优先用于继承(Composition Over Inheritance)"></a>组合优先用于继承(Composition Over Inheritance)</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><ul>
+<li>降低类之间的耦合</li>
+<li>使用继承，子类可以轻松地做出假设，并打破里氏替换原则(LSP)。<h3 id="如何做-9"><a href="#如何做-9" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>对LSP(可替代性)进行测试，以决定什么时候继承。</li>
+<li>当两个类之间的关系是”has a”或者”uses a”时使用组合，当时”is a”时才使用继承。<h3 id="参考资料-10"><a href="#参考资料-10" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://blogs.msdn.com/b/thalesc/archive/2012/09/05/favor-composition-over-inheritance.aspx" target="_blank" rel="noopener">Favor Composition Over Inheritance</a><h2 id="正交原则-Orthogonality"><a href="#正交原则-Orthogonality" class="headerlink" title="正交原则(Orthogonality)"></a>正交原则(Orthogonality)</h2><blockquote>
+<p>正交性的基本概念是，在概念上不相关的事物在系统中也应该是不相关的。<br>正交性与简单性有关：设计越正交，异常就越少。这使得用编程语言学习、阅读和编写程序变得更加容易。正交特征的意义是独立于上下文的；关键的参数是对称性和一致性。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="鲁棒性原则-Robustness-Principle"><a href="#鲁棒性原则-Robustness-Principle" class="headerlink" title="(鲁棒性原则) Robustness Principle"></a>(鲁棒性原则) Robustness Principle</h2><blockquote>
+<p>Be conservative in what you do, be liberal in what you accept from others</p>
+</blockquote>
+<h3 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h3><ul>
+<li>为了能够改进服务，您需要确保服务提供者能够做出更改以支持新需求，同时对现有客户造成最小的破坏。<h3 id="如何做-10"><a href="#如何做-10" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>向其他机器发送命令或数据的代码(或在同一台机器上的其他程序)应该完全符合规范，但是接收输入的服务应该接受不符合条件的输入，只要其含义是明确的。（在输入不符合规范时，也能够进行处理）。<h2 id="控制反转-Inversion-of-Control"><a href="#控制反转-Inversion-of-Control" class="headerlink" title="控制反转(Inversion of Control)"></a>控制反转(Inversion of Control)</h2><blockquote>
+<p>控制反转是一种设计原则，他能够在一个框架中，将自定义的功能交由一个容器来控制。控制反转使得可重用代码和解决特定问题的代码可以同时使用，并让他们可以在一个应用中进行协作，降低了系统的耦合。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="控制反转好处"><a href="#控制反转好处" class="headerlink" title="控制反转好处"></a>控制反转好处</h3><ul>
+<li><strong>控制反转是用来提高系统的模块化，并使得系统更容易拓展</strong>。</li>
+<li>将任务的执行和实现进行了分离。</li>
+<li>将一个模块集中在它所实现的任务上。</li>
+<li>将模块从假设中解放出来，不依赖其他系统是如何做的，而是依赖于合同。</li>
+<li>防止更换模块产生的副作用。<h3 id="控制反转实现方法"><a href="#控制反转实现方法" class="headerlink" title="控制反转实现方法"></a>控制反转实现方法</h3></li>
+<li>使用工厂模式（ Service Locator pattern）</li>
+<li>使用服务定位器模式（ Service Locator pattern）</li>
+<li>使用依赖注入（Dependency Injection）</li>
+<li>使用上下文查找（Dependency Injection）</li>
+<li>使用模板方法模式（Template Method pattern）</li>
+<li>使用策略模式（Strategy pattern）<h3 id="参考资料-11"><a href="#参考资料-11" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank" rel="noopener">Inversion of Control in Wikipedia</a></li>
+<li><a href="https://www.martinfowler.com/articles/injection.html" target="_blank" rel="noopener">Inversion of Control Containers and the Dependency Injection pattern</a><h1 id="模块-类的设计原则（Module-Class"><a href="#模块-类的设计原则（Module-Class" class="headerlink" title="模块/类的设计原则（Module/Class)"></a>模块/类的设计原则（Module/Class)</h1><h2 id="高内聚-Maximise-Cohesion"><a href="#高内聚-Maximise-Cohesion" class="headerlink" title="高内聚(Maximise Cohesion)"></a>高内聚(Maximise Cohesion)</h2><blockquote>
+<p>Cohesion of a single module/component is the degree to which its responsibilities form a meaningful unit; higher cohesion is better.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="高内聚的缺点"><a href="#高内聚的缺点" class="headerlink" title="高内聚的缺点"></a>高内聚的缺点</h3><ul>
+<li>增加了理解模块的难度。</li>
+<li>系统维护的难度增加了，因为域的逻辑变化会影响多个模块，并且一个模块的更改可能会需要相关模块的更改。</li>
+<li>重用模块的难度增加，因为大多数应用程序不需要模块提供的随机操作集。<h3 id="实现高内聚"><a href="#实现高内聚" class="headerlink" title="实现高内聚"></a>实现高内聚</h3></li>
+<li>将相关联的功能聚合在一起，比如说一个class中。<h2 id="里氏替换原则-Liskov-Substitution-Principle"><a href="#里氏替换原则-Liskov-Substitution-Principle" class="headerlink" title="里氏替换原则(Liskov Substitution Principle)"></a>里氏替换原则(Liskov Substitution Principle)</h2><blockquote>
+<p>Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>java中的多态，父类引用指向子类对象。</strong></p>
+<h3 id="参考资料-12"><a href="#参考资料-12" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="http://en.wikipedia.org/wiki/Liskov_substitution_principle" target="_blank" rel="noopener">Liskov substitution principle</a></li>
+<li><a href="http://www.blackwasp.co.uk/lsp.aspx" target="_blank" rel="noopener">Liskov Substitution Principle</a><h2 id="开闭原则-Open-Closed-Principle"><a href="#开闭原则-Open-Closed-Principle" class="headerlink" title="开闭原则(Open/Closed Principle)"></a>开闭原则(Open/Closed Principle)</h2>类在设计时应该对<strong>继承</strong>开放，并且对<strong>修改</strong>封闭。这样的类可以在不修改源代码的情况下修改其行为。<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3></li>
+<li>通过对当前的代码改变最小，提高了系统的可维护性和稳定性。<h3 id="如何做-11"><a href="#如何做-11" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>编写可以扩展的类(而不是可以修改的类)。</li>
+<li>只暴露需要更改的移动部分，隐藏其他所有内容。<h3 id="参考资料-13"><a href="#参考资料-13" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://en.wikipedia.org/wiki/Open/closed_principle" target="_blank" rel="noopener">Open Closed Principle</a></li>
+<li><a href="https://8thlight.com/blog/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html" target="_blank" rel="noopener">The Open Closed Principle</a><h2 id="单一职责原则-Single-Responsibility-Principle"><a href="#单一职责原则-Single-Responsibility-Principle" class="headerlink" title="单一职责原则(Single Responsibility Principle)"></a>单一职责原则(Single Responsibility Principle)</h2>一个类永远不应该有超过一个理由去改变。<br>每个类都应该有一个单独的职责，而这个职责应该完全由类来封装，而且只有这一个职责、<h3 id="好处-1"><a href="#好处-1" class="headerlink" title="好处"></a>好处</h3></li>
+<li>提高可维护性:只要修改一个模块或者类。<h3 id="如何做-12"><a href="#如何做-12" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>使用<a href="http://java-design-patterns.com/principles/#Curly-s-Law" target="_blank" rel="noopener">Curly’s Law.</a><h3 id="参考资料-14"><a href="#参考资料-14" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank" rel="noopener">Single responsibility principle</a><h2 id="隐藏具体的实现细节-Hide-Implementation-Details"><a href="#隐藏具体的实现细节-Hide-Implementation-Details" class="headerlink" title="隐藏具体的实现细节(Hide Implementation Details)"></a>隐藏具体的实现细节(Hide Implementation Details)</h2>一个软件模块通过提供一个接口来隐藏信息(即实现细节)，而不泄漏任何不必要的信息。<h3 id="好处-2"><a href="#好处-2" class="headerlink" title="好处"></a>好处</h3></li>
+<li>当实现更改时，客户端所使用的是接口，不需要更改。（多态）<h3 id="如何做-13"><a href="#如何做-13" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>最小化类和成员的作用域。</li>
+<li>不要公开公开成员数据。</li>
+<li>避免将私有实现细节放入类的接口中。</li>
+<li>减少耦合，以隐藏更多的实现细节。<h3 id="参考资料-15"><a href="#参考资料-15" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://en.wikipedia.org/wiki/Information_hiding" target="_blank" rel="noopener">Information hiding</a><h2 id="Curly’s-Law"><a href="#Curly’s-Law" class="headerlink" title="Curly’s Law"></a>Curly’s Law</h2><h3 id="参考资料-16"><a href="#参考资料-16" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://blog.codinghorror.com/curlys-law-do-one-thing/" target="_blank" rel="noopener">Curly’s Law: Do One Thing</a></li>
+<li><a href="http://fortyplustwo.com/2008/09/06/the-rule-of-one-or-curlys-law/" target="_blank" rel="noopener">The Rule of One or Curly’s Law</a><h2 id="封装变化-Encapsulate-What-Changes"><a href="#封装变化-Encapsulate-What-Changes" class="headerlink" title="封装变化(Encapsulate What Changes)"></a>封装变化(Encapsulate What Changes)</h2>一个好的设计可以识别那些最有可能改变的点，并将它们封装在API背后。当预期的更改发生时，修改将保留在本地。<h3 id="好处-3"><a href="#好处-3" class="headerlink" title="好处"></a>好处</h3></li>
+<li>当发生更改时，最小化所需的修改<h3 id="如何做-14"><a href="#如何做-14" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>封装API背后的变化，而提供不变的访问方式。</li>
+<li>尽可能的将不同的改变分发到这个模块本身，让其本身负责。<h3 id="参考资料-17"><a href="#参考资料-17" class="headerlink" title="参考资料"></a>参考资料</h3></li>
+<li><a href="http://blogs.msdn.com/b/steverowe/archive/2007/12/26/encapsulate-what-varies.aspx" target="_blank" rel="noopener">Encapsulate the Concept that Varies</a></li>
+<li><a href="http://blogs.msdn.com/b/steverowe/archive/2007/12/26/encapsulate-what-varies.aspx" target="_blank" rel="noopener">Encapsulate What Varies</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Information_hiding" target="_blank" rel="noopener">Information Hiding</a><h2 id="接口分割原则-Interface-Segregation-Principle"><a href="#接口分割原则-Interface-Segregation-Principle" class="headerlink" title="接口分割原则(Interface Segregation Principle)"></a>接口分割原则(Interface Segregation Principle)</h2>将一些方法比较多的接口拆分成多个小的接口。接口应该更依赖于调用它的代码，而不是实现它的代码。<h3 id="原则描述"><a href="#原则描述" class="headerlink" title="原则描述"></a>原则描述</h3><ul>
+<li>如果一个类实现了不需要的方法，调用者就需要知道该类的方法实现。例如，如果一个类实现了一个方法，但是只是简单地抛出，那么调用者将需要知道这个方法实际上不应该被调用。HiveStatement实现了Statement接口，然而现在Hive现在并不打算支持其中的一些方法，只是简单的throw Exception了。<h3 id="如何做-15"><a href="#如何做-15" class="headerlink" title="如何做"></a>如何做</h3></li>
+</ul>
+</li>
+<li>避免过于庞大的接口。类不应该实现除了它的职责的方法。<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3></li>
+<li><a href="https://en.wikipedia.org/wiki/Interface_segregation_principle" target="_blank" rel="noopener">Interface segregation principle</a><h2 id="命令查询分离-Command-Query-Separation"><a href="#命令查询分离-Command-Query-Separation" class="headerlink" title="命令查询分离(Command Query Separation)"></a>命令查询分离(Command Query Separation)</h2>命令查询分离原则声明，每个方法都应该要么是执行操作的命令，要么是将数据返回给调用者的查询，而不是两者都执行。<br>有了这个原则，程序员就可以更加自信地编写代码了。查询方法可以在任何地方和任何顺序使用，因为它们不会改变状态。有了命令，你必须更加小心。<h3 id="如何做-16"><a href="#如何做-16" class="headerlink" title="如何做"></a>如何做</h3></li>
+<li>将每个方法作为一个查询或一个命令来实现。</li>
+<li>将命名约定应用于方法名，这意味着该方法是一个查询还是一个命令。<h3 id="参考文献-1"><a href="#参考文献-1" class="headerlink" title="参考文献"></a>参考文献</h3></li>
+<li><a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank" rel="noopener">Command Query Separation in Wikipedia</a></li>
+<li><a href="http://martinfowler.com/bliki/CommandQuerySeparation.html" target="_blank" rel="noopener">Command Query Separation by Martin Fowler</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+            <a href="/tags/principle/" rel="tag"># principle</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/17/从源码层面看MyBatis的缓存机制/" rel="next" title="从源码层面看MyBatis的缓存机制">
+                <i class="fa fa-chevron-left"></i> 从源码层面看MyBatis的缓存机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/21/java动态代理总结/" rel="prev" title="java动态代理总结">
+                java动态代理总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDQyNC8xNjk1MQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar/obito.jpg" alt="Robin Yang">
+            
+              <p class="site-author-name" itemprop="name">Robin Yang</p>
+              <p class="site-description motion-element" itemprop="description">Only the stronger survive in the world.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#通用原则"><span class="nav-number">1.</span> <span class="nav-text">通用原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#KISS-Keep-It-Simple-Stupid"><span class="nav-number">1.1.</span> <span class="nav-text">KISS(Keep It Simple Stupid)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做"><span class="nav-number">1.1.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">1.1.2.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YAGNI-You-aren’t-gonna-need-it"><span class="nav-number">1.2.</span> <span class="nav-text">YAGNI(You aren’t gonna need it)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做"><span class="nav-number">1.2.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#做最简单的事-Do-The-Simplest-Thing-That-Could-Possibly-Work"><span class="nav-number">1.3.</span> <span class="nav-text">做最简单的事(Do The Simplest Thing That Could Possibly Work)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关注点分离-Separation-of-Concerns"><span class="nav-number">1.4.</span> <span class="nav-text">关注点分离(Separation of Concerns)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-2"><span class="nav-number">1.4.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-3"><span class="nav-number">1.4.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保持代码干燥，尽量减少重复代码-Keep-Things-DRY"><span class="nav-number">1.5.</span> <span class="nav-text">保持代码干燥，尽量减少重复代码(Keep Things DRY)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做-4"><span class="nav-number">1.5.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-3"><span class="nav-number">1.5.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-4"><span class="nav-number">1.5.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写代码的时候考虑代码的可维护性-Code-For-The-Maintainer"><span class="nav-number">1.6.</span> <span class="nav-text">写代码的时候考虑代码的可维护性(Code For The Maintainer)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做-5"><span class="nav-number">1.6.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-4"><span class="nav-number">1.6.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-5"><span class="nav-number">1.6.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免过早优化-Avoid-Premature-Optimization"><span class="nav-number">1.7.</span> <span class="nav-text">避免过早优化(Avoid Premature Optimization)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做-6"><span class="nav-number">1.7.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-5"><span class="nav-number">1.7.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-6"><span class="nav-number">1.7.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构代码时需要考虑的问题——童子军原则-Boy-Scout-Rule"><span class="nav-number">1.8.</span> <span class="nav-text">重构代码时需要考虑的问题——童子军原则(Boy-Scout Rule)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做-7"><span class="nav-number">1.8.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-6"><span class="nav-number">1.8.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-7"><span class="nav-number">1.8.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块与模块-类与类-之间的设计原则（Inter-Module-Class"><span class="nav-number">2.</span> <span class="nav-text">模块与模块(类与类)之间的设计原则（Inter-Module/Class)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最小化代码的耦合程度-Minimise-Coupling"><span class="nav-number">2.1.</span> <span class="nav-text">最小化代码的耦合程度(Minimise Coupling)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么这么做-8"><span class="nav-number">2.1.1.</span> <span class="nav-text">为什么这么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-7"><span class="nav-number">2.1.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-8"><span class="nav-number">2.1.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迪米特法则-Law-of-Demeter"><span class="nav-number">2.2.</span> <span class="nav-text">(迪米特法则)Law of Demeter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么"><span class="nav-number">2.2.1.</span> <span class="nav-text">为什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-8"><span class="nav-number">2.2.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-9"><span class="nav-number">2.2.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合优先用于继承-Composition-Over-Inheritance"><span class="nav-number">2.3.</span> <span class="nav-text">组合优先用于继承(Composition Over Inheritance)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原因"><span class="nav-number">2.3.1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-9"><span class="nav-number">2.3.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-10"><span class="nav-number">2.3.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交原则-Orthogonality"><span class="nav-number">2.4.</span> <span class="nav-text">正交原则(Orthogonality)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鲁棒性原则-Robustness-Principle"><span class="nav-number">2.5.</span> <span class="nav-text">(鲁棒性原则) Robustness Principle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原因-1"><span class="nav-number">2.5.1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-10"><span class="nav-number">2.5.2.</span> <span class="nav-text">如何做</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制反转-Inversion-of-Control"><span class="nav-number">2.6.</span> <span class="nav-text">控制反转(Inversion of Control)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制反转好处"><span class="nav-number">2.6.1.</span> <span class="nav-text">控制反转好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制反转实现方法"><span class="nav-number">2.6.2.</span> <span class="nav-text">控制反转实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-11"><span class="nav-number">2.6.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块-类的设计原则（Module-Class"><span class="nav-number">3.</span> <span class="nav-text">模块/类的设计原则（Module/Class)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高内聚-Maximise-Cohesion"><span class="nav-number">3.1.</span> <span class="nav-text">高内聚(Maximise Cohesion)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高内聚的缺点"><span class="nav-number">3.1.1.</span> <span class="nav-text">高内聚的缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现高内聚"><span class="nav-number">3.1.2.</span> <span class="nav-text">实现高内聚</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#里氏替换原则-Liskov-Substitution-Principle"><span class="nav-number">3.2.</span> <span class="nav-text">里氏替换原则(Liskov Substitution Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-12"><span class="nav-number">3.2.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开闭原则-Open-Closed-Principle"><span class="nav-number">3.3.</span> <span class="nav-text">开闭原则(Open/Closed Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#好处"><span class="nav-number">3.3.1.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-11"><span class="nav-number">3.3.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-13"><span class="nav-number">3.3.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单一职责原则-Single-Responsibility-Principle"><span class="nav-number">3.4.</span> <span class="nav-text">单一职责原则(Single Responsibility Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#好处-1"><span class="nav-number">3.4.1.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-12"><span class="nav-number">3.4.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-14"><span class="nav-number">3.4.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏具体的实现细节-Hide-Implementation-Details"><span class="nav-number">3.5.</span> <span class="nav-text">隐藏具体的实现细节(Hide Implementation Details)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#好处-2"><span class="nav-number">3.5.1.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-13"><span class="nav-number">3.5.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-15"><span class="nav-number">3.5.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Curly’s-Law"><span class="nav-number">3.6.</span> <span class="nav-text">Curly’s Law</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-16"><span class="nav-number">3.6.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装变化-Encapsulate-What-Changes"><span class="nav-number">3.7.</span> <span class="nav-text">封装变化(Encapsulate What Changes)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#好处-3"><span class="nav-number">3.7.1.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-14"><span class="nav-number">3.7.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-17"><span class="nav-number">3.7.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口分割原则-Interface-Segregation-Principle"><span class="nav-number">3.8.</span> <span class="nav-text">接口分割原则(Interface Segregation Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原则描述"><span class="nav-number">3.8.1.</span> <span class="nav-text">原则描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-15"><span class="nav-number">3.8.2.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">3.8.3.</span> <span class="nav-text">参考文献</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令查询分离-Command-Query-Separation"><span class="nav-number">3.9.</span> <span class="nav-text">命令查询分离(Command Query Separation)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做-16"><span class="nav-number">3.9.1.</span> <span class="nav-text">如何做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献-1"><span class="nav-number">3.9.2.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Robin Yang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
